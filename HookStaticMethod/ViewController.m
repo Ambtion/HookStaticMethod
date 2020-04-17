@@ -7,6 +7,12 @@
 //
 
 #import "ViewController.h"
+#include "staticHook.h"
+ 
+void mytest(void){
+    NSLog(@"test method is call \n");
+}
+
 
 @interface ViewController ()
 
@@ -15,9 +21,11 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+//    mytest();
+    searchStaticMethodForName("mytest");
+    
 }
-
 
 @end
